@@ -29,18 +29,12 @@ public class UserServiceImpl implements UserService {
 		User user = userMapper.readUser(username);
 		System.out.println("2 : " + user);
 		if(user==null) {
+			System.out.println("error");
 			throw new UsernameNotFoundException(username);
 		}
 		user.setAuthorities(getAuthorities(username));
 		return user;
 	}
-
-//	public Collection<GrantedAuthority> getAuthorities(String username) {
-//		System.out.println("3 : " + username);
-//		Collection<GrantedAuthority> authorities = userMapper.readAuthority(username);
-//		System.out.println("4 : " + authorities);
-//		return authorities;
-//	}
 	
 	public Collection<GrantedAuthority> getAuthorities(String username) {
         List<String> string_authorities = userMapper.readAuthority(username);
@@ -51,14 +45,6 @@ public class UserServiceImpl implements UserService {
         System.out.println("3 : " + authorities);
         return authorities;
    }
-
-//	@Override
-//	public User readUser(String username) {
-//		User user = userMapper.readUser(username);
-//		System.out.println("readUser : " + user);
-//		user.setAuthorities(userMapper.readAuthority(username));
-//		return user;
-//	}
 
 	@Override
 	public void createUser(User user) {

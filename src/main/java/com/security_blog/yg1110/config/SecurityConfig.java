@@ -18,15 +18,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				// 루트와 home요청에 대해서는 요청을 허용한다.
-				.antMatchers("/", "/createduser").permitAll()
-				// 나머지 경로는 사용자 인증이 된 요청에 대해서만 요청을 허용한다.
-				.anyRequest().authenticated()
-				.and()
+			// 루트와 createuser요청에 대해서는 요청을 허용한다.
+			.antMatchers("/", "/createuser").permitAll()
+			.anyRequest().authenticated()
+			.and()
 			.formLogin()
 			.and()
 			.logout()
-				.permitAll();
+			.permitAll();
 	}
 
 	@Override

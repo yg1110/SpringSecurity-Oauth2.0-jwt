@@ -6,47 +6,44 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.security_blog.yg1110.domain.User;
-import com.security_blog.yg1110.dto.Home;
-import com.security_blog.yg1110.mapper.HomeMapper;
 import com.security_blog.yg1110.mapper.UserMapper;
+import com.security_blog.yg1110.servicer.UserServiceImpl;
 
 @RestController
-public class HomeController {
-	@Autowired
-	HomeMapper homeMapper;
-
+public class UserController {
 	@Autowired
 	UserMapper userMapper;
 
-	@RequestMapping("/")
-	public List<String> home() {
-		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-		System.out.println(bCryptPasswordEncoder.encode("1234"));
-		return userMapper.readAuthority("cusonar");
-	}
+	@Autowired UserServiceImpl userservice;
 
-	@RequestMapping("/createduser")
-	public void createduser() {
+	@RequestMapping("/")
+	public List<User> user_list() {
+		return userMapper.Userlist();
+	}
+	
+	@RequestMapping("/{username}")
+	public List<String> user_auth(@PathVariable String username) {
+		return userMapper.readAuthority(username);
+	}
+	
+	@RequestMapping("/createuser")
+	public void createuser() {
 		User user = new User("a", "a", "a", true, true, true, true);
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority("ADMIN"));
 		authorities.add(new SimpleGrantedAuthority("USER"));
 		user.setAuthorities(authorities);
-		System.out.println(user);
-		userMapper.createUser(user);
-		userMapper.createAuthority(user);
+		userservice.createUser(user);
+	}
+	
+	@RequestMapping("/deleteuser/{username}")
+	public void deleteuser(@PathVariable String username) {
+		userservice.deleteUser(username);
 	}
 
-	@RequestMapping("/{name}")
-	public Home home(@PathVariable String name) {
-		System.out.println(name);
-		Home home = homeMapper.readHome(name);
-		return home;
-	}
 }
