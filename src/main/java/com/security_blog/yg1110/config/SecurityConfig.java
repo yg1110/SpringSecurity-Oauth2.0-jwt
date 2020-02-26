@@ -18,9 +18,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/admin/**").access("hasAuthority('ADMIN')")
+			.antMatchers("/user/admin/**").access("hasAuthority('ADMIN')")
 			.antMatchers("/user/myinfo").access("hasAuthority('USER')") // 페이지 권한 설정
-			.antMatchers("/**").permitAll()
+			.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result").permitAll()
+			.anyRequest().authenticated()
 			.and()
 			.formLogin().loginPage("/user/loginPage")
 			.loginProcessingUrl("/login")
