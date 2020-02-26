@@ -89,12 +89,14 @@ public class User implements UserDetails {
          this.authorities = authorities;
     }
 
-	@Override
-	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", name=" + name + ", isAccountNonExpired="
-				+ isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialsNonExpired="
-				+ isCredentialsNonExpired + ", isEnabled=" + isEnabled + ", authorities=" + authorities + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "User [username=" + username + ", password=" + password + ", name=" + name + ", isAccountNonExpired="
+//				+ isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialsNonExpired="
+//				+ isCredentialsNonExpired + ", isEnabled=" + isEnabled + "]";
+//	}
+    
+    
 
 	public User(String username, String password, String name, boolean isAccountNonExpired, boolean isAccountNonLocked,
 			boolean isCredentialsNonExpired, boolean isEnabled) {
@@ -106,5 +108,12 @@ public class User implements UserDetails {
 		this.isAccountNonLocked = isAccountNonLocked;
 		this.isCredentialsNonExpired = isCredentialsNonExpired;
 		this.isEnabled = isEnabled;
+	}
+
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", name=" + name + ", isAccountNonExpired="
+				+ isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialsNonExpired="
+				+ isCredentialsNonExpired + ", isEnabled=" + isEnabled + ", authorities=" + authorities + "]";
 	}
 }

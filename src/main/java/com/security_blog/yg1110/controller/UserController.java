@@ -26,7 +26,7 @@ public class UserController {
 		return userMapper.Userlist();
 	}
 	
-	@RequestMapping("/{username}")
+	@RequestMapping("/user_auth/{username}")
 	public List<String> user_auth(@PathVariable String username) {
 		return userMapper.readAuthority(username);
 	}
