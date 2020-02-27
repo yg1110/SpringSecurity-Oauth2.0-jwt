@@ -11,6 +11,7 @@
 <body>
 	<h1>메인페이지</h1>
     <hr>
+    <a href="/user/social">Login with Google</a>
     <sec:authorize access="isAnonymous()"><a href="/user/loginPage">로그인</a></sec:authorize>
     <sec:authorize access="isAuthenticated()"><a href="/user/logout">로그아웃</a></sec:authorize>
     <sec:authorize access="isAnonymous()"><a href="/user/signup">회원가입</a></sec:authorize>

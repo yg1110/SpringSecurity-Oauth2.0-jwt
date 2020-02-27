@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +27,16 @@ public class UserController {
     // 메인 페이지
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(auth.getPrincipal());
         return "index";
+    }
+
+    // 소셜로그인 페이지
+    @GetMapping("/user/social")
+    public String social() {
+
+        return "social_login";
     }
 
     // 회원가입 페이지

@@ -74,7 +74,7 @@
 			<artifactId>json-path</artifactId>
 		</dependency>
 
-		<!-- sequrity -->
+		<!-- security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -85,6 +85,7 @@
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 
+		<!-- jsp -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -95,6 +96,15 @@
 			<version>1.2</version>
 		</dependency>
 
+		<!-- OAuth -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

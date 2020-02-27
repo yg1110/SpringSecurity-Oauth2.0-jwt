@@ -14,26 +14,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	UserService userService;
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+//		http.authorizeRequests()
+//			.antMatchers("/user/admin/**").access("hasAuthority('ADMIN')")
+//			.antMatchers("/user/myinfo").access("hasAuthority('USER')") // 페이지 권한 설정
+//			.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result").permitAll()
+//			.anyRequest().authenticated()
+//			.and()
+//			.oauth2Login()
+//			.and()
+//			.formLogin().loginPage("/user/loginPage")
+//			.loginProcessingUrl("/login")
+//			.defaultSuccessUrl("/user/login/result")
+//			.permitAll() // 로그인 설정
+//			.and()
+//			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 설정
+//			.logoutSuccessUrl("/user/logout/result").invalidateHttpSession(true)
+//			.and()
+//			.exceptionHandling().accessDeniedPage("/user/denied") // 403 예외처리 핸들링
+//			.and()
+//			.csrf().disable();
 		http.authorizeRequests()
-			.antMatchers("/user/admin/**").access("hasAuthority('ADMIN')")
-			.antMatchers("/user/myinfo").access("hasAuthority('USER')") // 페이지 권한 설정
-			.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result").permitAll()
-			.anyRequest().authenticated()
-			.and()
-			.formLogin().loginPage("/user/loginPage")
-			.loginProcessingUrl("/login")
-			.defaultSuccessUrl("/user/login/result")
-			.permitAll() // 로그인 설정
-			.and()
-			.logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 설정
-			.logoutSuccessUrl("/user/logout/result").invalidateHttpSession(true)
-			.and()
-			.exceptionHandling().accessDeniedPage("/user/denied") // 403 예외처리 핸들링
-			.and()
-			.csrf().disable();
+		.antMatchers("/**").authenticated()
+        .and()
+        .oauth2Login();
+
 	}
 
 	@Override
