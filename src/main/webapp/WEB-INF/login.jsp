@@ -17,6 +17,9 @@
         <input type="text" name="username" placeholder="이메일 입력해주세요">
         <input type="password" name="password" placeholder="비밀번호">
         <button type="submit">로그인</button>
-    </form>    
+    </form>
+    
+    <a href="/social_Login">Login with Google</a>
+        
 </body>
 </html>

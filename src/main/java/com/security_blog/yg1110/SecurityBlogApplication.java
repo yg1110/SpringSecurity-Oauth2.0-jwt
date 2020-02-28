@@ -1,4 +1,4 @@
-package com.security_blog.yg1110;
+ package com.security_blog.yg1110;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

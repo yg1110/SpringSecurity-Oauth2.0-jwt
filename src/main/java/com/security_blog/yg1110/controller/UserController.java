@@ -27,18 +27,16 @@ public class UserController {
     // 메인 페이지
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth.getPrincipal());
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	
+//        System.out.println(auth.getDetails());
+//        System.out.println(auth.getPrincipal());
+//        System.out.println(auth.getCredentials());
+        System.out.println(auth.getAuthorities());
+        System.out.println(auth.getName());	
         return "index";
     }
-
-    // 소셜로그인 페이지
-    @GetMapping("/user/social")
-    public String social() {
-
-        return "social_login";
-    }
-
+	
     // 회원가입 페이지
     @GetMapping("/user/signup")
     public String dispSignup() {
@@ -50,8 +48,8 @@ public class UserController {
     public String execSignup(User user) {
     	System.out.println(user);
     	List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//		authorities.add(new SimpleGrantedAuthority("ADMIN"));
-		authorities.add(new SimpleGrantedAuthority("USER"));
+//		authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		user.setAuthorities(authorities);
     	userservice.createUser(user);
         return "redirect:/user/login";
@@ -80,7 +78,7 @@ public class UserController {
     public String dispDenied() {
         return "denied";
     }
-
+    
     // 내 정보 페이지
     @GetMapping("/user/info")
     public String dispMyInfo() {
