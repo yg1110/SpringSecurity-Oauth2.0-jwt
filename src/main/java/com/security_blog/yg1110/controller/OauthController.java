@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OauthController {
-	@RequestMapping(value = "/social_uset_info", method = RequestMethod.GET)
+	@RequestMapping(value = "/social_user_info", method = RequestMethod.GET)
 	public Object index() {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(auth.getDetails());
+        System.out.println(auth);
         return auth;
     }
 }

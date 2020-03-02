@@ -27,17 +27,17 @@ public class UserController {
     // 메인 페이지
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	
 //        System.out.println(auth.getDetails());
 //        System.out.println(auth.getPrincipal());
 //        System.out.println(auth.getCredentials());
-        System.out.println(auth.getAuthorities());
-        System.out.println(auth.getName());	
+//        System.out.println(auth.getAuthorities());
+//        System.out.println(auth.getName());	
         return "index";
     }
-	
-    // 회원가입 페이지
+    
+	// 회원가입 페이지
     @GetMapping("/user/signup")
     public String dispSignup() {
         return "signup";
