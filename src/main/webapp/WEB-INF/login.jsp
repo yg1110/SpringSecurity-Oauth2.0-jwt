@@ -13,14 +13,11 @@
     <hr>
 
 	<form action="/login" method="post">
-		<% response.addHeader("Authorization", "aaa"); %>
         <%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
         <input type="text" name="username" placeholder="이메일 입력해주세요">
         <input type="password" name="password" placeholder="비밀번호">
         <button type="submit">로그인</button>
     </form>
-    
     <a href="/social_Login">Login with Google</a>
-        
 </body>
 </html>

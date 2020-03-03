@@ -12,7 +12,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.security_blog.yg1110.jwt.JwtAuthenticationFilter;
+import com.security_blog.yg1110.filter.OauthFilter;
+import com.security_blog.yg1110.filter.jwt.JwtAuthenticationFilter;
 import com.security_blog.yg1110.servicer.UserService;
 
 @Configuration
@@ -29,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/user/admin/**").access("hasAuthority('ROLE_ADMIN')")
 			.antMatchers("/user/myinfo").access("hasAuthority('ROLE_USER')") // 페이지 권한 설정
-			.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result", "http://localhost:8080/swagger-ui.html").permitAll()
+			.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class) // 소셜로그인 설정

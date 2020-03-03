@@ -1,4 +1,4 @@
-package com.security_blog.yg1110.config;
+package com.security_blog.yg1110.filter;
 
 import javax.servlet.Filter;
 
