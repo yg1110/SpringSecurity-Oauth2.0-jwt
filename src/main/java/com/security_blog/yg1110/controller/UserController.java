@@ -25,13 +25,6 @@ public class UserController {
     // 메인 페이지
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
-//    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    	
-//        System.out.println(auth.getDetails());
-//        System.out.println(auth.getPrincipal());
-//        System.out.println(auth.getCredentials());
-//        System.out.println(auth.getAuthorities());
-//        System.out.println(auth.getName());	
         return "index";
     }
     
@@ -56,13 +49,13 @@ public class UserController {
     // 로그인 페이지
     @GetMapping("/user/loginPage")
     public String dispLogin() {
-        return "login";
+        return "loginpage";
     }
 
     // 로그인 결과 페이지
     @GetMapping("/user/login/result")
     public String dispLoginResult() {
-        return "loginSuccess";
+        return "mainpage";
     }
 
     // 로그아웃 결과 페이지

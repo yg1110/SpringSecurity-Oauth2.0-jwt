@@ -27,9 +27,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		System.out.println(request.getRequestURI());
-		
-		Authentication loginuser_info = SecurityContextHolder.getContext().getAuthentication();
 
 		HttpSession session = request.getSession();
 		String validateToken = (String) session.getAttribute("Authorization");
@@ -55,9 +52,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		}
 		// 토큰이 발급되어있지 않은 경우
 		else {
+			Authentication loginuser_info = SecurityContextHolder.getContext().getAuthentication();
+
 			if (loginuser_info != null) {
-				System.out.println(loginuser_info.getAuthorities());
-				System.out.println(loginuser_info.getName());
 				try {
 					// 토큰발급
 					String jwt = tokenProvider.generateToken(loginuser_info);
