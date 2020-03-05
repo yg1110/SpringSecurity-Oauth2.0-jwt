@@ -13,22 +13,21 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.security_blog.yg1110.filter.OauthFilter;
+import com.security_blog.yg1110.filter.Oauth2Filter;
 import com.security_blog.yg1110.filter.jwt.JwtAuthenticationFilter;
-import com.security_blog.yg1110.servicer.UserService;
+import com.security_blog.yg1110.servicer.IUserService;
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private UserService userService;
+	private IUserService userService;
 
 	@Autowired
-	private OauthFilter filter;
+	private Oauth2Filter filter;
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		// static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
 		web.ignoring().antMatchers("/login/css/**", "/login/js/**", "/login/images/**", "/login/vendor/**", "/login/fonts/**", "/ckeditor/**");
 	}
 
@@ -36,10 +35,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/user/admin/**").access("hasAuthority('ROLE_ADMIN')")
 				.antMatchers("/user/myinfo").access("hasAuthority('ROLE_USER')") // 페이지 권한 설정
-				.antMatchers("/", "/user/signup", "/user/denied", "/user/logout/result").permitAll().anyRequest()
+				.antMatchers("/user/signup", "/user/denied", "/user/logout/result", "/signup").permitAll().anyRequest()
 				.authenticated().and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class) // 소셜로그인 설정
 				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class) // jwt 필터 설정
-				.formLogin().loginPage("/user/loginPage").loginProcessingUrl("/login")
+				.formLogin().loginPage("/user/login").loginProcessingUrl("/login")
 				.defaultSuccessUrl("/user/login/result", true).permitAll() // 로그인 설정
 				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 설정
 				.logoutSuccessUrl("/user/logout/result").invalidateHttpSession(true).and().exceptionHandling()

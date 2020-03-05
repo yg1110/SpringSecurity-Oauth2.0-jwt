@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>접근 거부</title>
+    <title>YG1110 BLOG</title>
 </head>
 <body>
     <h1>접근 불가 페이지입니다.</h1>
