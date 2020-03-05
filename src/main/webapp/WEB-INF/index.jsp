@@ -12,10 +12,6 @@
 <body>
 	<h1>메인페이지</h1>
 	<hr>
-	<%
-		session.getAttribute("Authorization");
-	%>
-
 	<sec:authorize access="isAnonymous()">
 		<a href="/user/loginPage">로그인</a>
 	</sec:authorize>
@@ -33,6 +29,5 @@
 	<sec:authorize access="hasAuthority('ROLE_ADMIN')">
 		<a href="/user/admin">admin</a>
 	</sec:authorize>
-	<br>
 </body>
 </html>

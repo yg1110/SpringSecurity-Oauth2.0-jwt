@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		// static 디렉터리의 하위 파일 목록은 인증 무시 ( = 항상통과 )
-		web.ignoring().antMatchers("/login/css/**", "/login/js/**", "/login/images/**", "/login/vendor/**", "/login/fonts/**");
+		web.ignoring().antMatchers("/login/css/**", "/login/js/**", "/login/images/**", "/login/vendor/**", "/login/fonts/**", "/ckeditor/**");
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.authenticated().and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class) // 소셜로그인 설정
 				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class) // jwt 필터 설정
 				.formLogin().loginPage("/user/loginPage").loginProcessingUrl("/login")
-				.defaultSuccessUrl("/user/login/result").permitAll() // 로그인 설정
+				.defaultSuccessUrl("/user/login/result", true).permitAll() // 로그인 설정
 				.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/user/logout")) // 로그아웃 설정
 				.logoutSuccessUrl("/user/logout/result").invalidateHttpSession(true).and().exceptionHandling()
 				.accessDeniedPage("/user/denied") // 403 예외처리 핸들링

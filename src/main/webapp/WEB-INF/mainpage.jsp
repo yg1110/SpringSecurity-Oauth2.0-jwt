@@ -1,54 +1,57 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE HTML>
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>YG1110 BLOG</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>YG1110 BLOG</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
 
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content="" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="favicon.ico">
 
-	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700"
+	rel="stylesheet">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="/main/css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="/main/css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="/main/css/bootstrap.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="/main/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="/main/css/owl.theme.default.min.css">
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="/main/css/magnific-popup.css">
+<!-- Animate.css -->
+<link rel="stylesheet" href="/main/css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="/main/css/icomoon.css">
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="/main/css/bootstrap.css">
+<!-- Owl Carousel -->
+<link rel="stylesheet" href="/main/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/main/css/owl.theme.default.min.css">
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="/main/css/magnific-popup.css">
 
-	<link rel="stylesheet" href="/main/css/style.css">
+<link rel="stylesheet" href="/main/css/style.css">
 
 
-	<!-- Modernizr JS -->
-	<script src="/main/js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
+<!-- Modernizr JS -->
+<script src="/main/js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
@@ -63,26 +66,21 @@
 				<div class="row">
 					<div class="col-md-12">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="services.html">Services</a></li>
-							<li><a href="work.html">Work</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li class="active"><a href="/user/login/result">Home</a></li>
+							<li><a href="/blog/postlist">Blog</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
-
 	<div id="colorlib-page">
 		<header>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="colorlib-navbar-brand">
-							<a class="colorlib-logo" href="index.html"><span>YG</span><span>1110</span></a>
+							<a class="colorlib-logo" href="/user/login/result"><span>YG</span><span>1110</span></a>
 						</div>
 						<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 					</div>
@@ -98,11 +96,13 @@
 					<div class="col-md-5 animate-box">
 						<div class="owl-carousel3">
 							<div class="item">
-								<img class="img-responsive about-img" src="/main/images/about.jpg"
+								<img class="img-responsive about-img"
+									src="/main/images/about.jpg"
 									alt="html5 bootstrap template by colorlib.com">
 							</div>
 							<div class="item">
-								<img class="img-responsive about-img" src="/main/images/about-2.jpg"
+								<img class="img-responsive about-img"
+									src="/main/images/about-2.jpg"
 									alt="html5 bootstrap template by colorlib.com">
 							</div>
 						</div>
@@ -111,27 +111,36 @@
 						<div class="about-desc">
 							<div class="owl-carousel3">
 								<div class="item">
-									<h2><span>Joeng</span><span>Young-gil</span></h2>
+									<h2>
+										<span>Joeng</span><span>Young-gil</span>
+									</h2>
 								</div>
 								<div class="item">
-									<h2><span>I'm</span><span>A Programmer</span></h2>
+									<h2>
+										<span>I'm</span><span>A Programmer</span>
+									</h2>
 								</div>
 							</div>
 							<div class="desc">
 								<div class="rotate">
 									<h2 class="heading">About</h2>
 								</div>
-								<p>A small river named Duden <a href="#">flows by their place</a> and supplies it with
-									the necessary regelialia. It is a paradisematic country, in which roasted parts of
-									sentences fly into your mouth. Even the all-powerful Pointing has no control about
-									the blind texts it is an almost unorthographic life.</p>
-								<p class="colorlib-social-icons">
-									<a href="#"><i class="icon-facebook4"></i></a>
-									<a href="#"><i class="icon-twitter3"></i></a>
-									<a href="#"><i class="icon-googleplus"></i></a>
-									<a href="#"><i class="icon-dribbble2"></i></a>
+								<p>
+									A small river named Duden <a href="#">flows by their place</a>
+									and supplies it with the necessary regelialia. It is a
+									paradisematic country, in which roasted parts of sentences fly
+									into your mouth. Even the all-powerful Pointing has no control
+									about the blind texts it is an almost unorthographic life.
 								</p>
-								<p><a href="#" class="btn btn-primary btn-outline">Contact Me!</a></p>
+								<p class="colorlib-social-icons">
+									<a href="#"><i class="icon-facebook4"></i></a> <a href="#"><i
+										class="icon-twitter3"></i></a> <a href="#"><i
+										class="icon-googleplus"></i></a> <a href="#"><i
+										class="icon-dribbble2"></i></a>
+								</p>
+								<p>
+									<a href="#" class="btn btn-primary btn-outline">Contact Me!</a>
+								</p>
 							</div>
 						</div>
 					</div>
@@ -148,7 +157,8 @@
 						<div class="services-flex">
 							<div class="one-third">
 								<div class="row">
-									<div class="col-md-12 col-md-offset-0 animate-box intro-heading">
+									<div
+										class="col-md-12 col-md-offset-0 animate-box intro-heading">
 										<span>My Services</span>
 										<h2>Here Are Some of My Skills</h2>
 									</div>
@@ -161,41 +171,37 @@
 									</div>
 									<div class="col-md-6">
 										<div class="services animate-box">
-											<h3>1 - Graphic Design</h3>
+											<h3>1 - Back End Development</h3>
 											<ul>
-												<li>UI Design</li>
-												<li>Website &amp; Digital Design</li>
-												<li>Brading &amp; Visual Identity</li>
-												<li>Print Design</li>
+												<li>Spring</li>
+												<li><del>Node.js</del></li>
+												<li><del>Django</del></li>
 											</ul>
 										</div>
 										<div class="services animate-box">
-											<h3>3 - Front End Development</h3>
+											<h3>3 - Database</h3>
 											<ul>
-												<li>HTML / CSS</li>
-												<li>JS &amp; Jquery Startup</li>
-												<li>WordPress</li>
-												<li>Jomla</li>
+												<li>Mysql</li>
+												<li>MongoDB</li>
+												<li><del>Redis</del></li>
 											</ul>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="services animate-box">
-											<h3>2 - Illustration</h3>
+											<h3>2 - Front End Development</h3>
 											<ul>
-												<li>Editorial</li>
-												<li>Narrative</li>
-												<li>Motion Graphics</li>
-												<li>Animation</li>
-												<li>Visual Effects</li>
+												<li>HTML / CSS</li>
+												<li>JavaScript &amp; Jquery</li>
+												<li>Vue.js &amp; Vuetify</li>
+												<li>bootstap</li>
 											</ul>
 										</div>
 										<div class="services animate-box">
-											<h3>4 - Web Marketing</h3>
+											<h3>4 - ETC</h3>
 											<ul>
-												<li>Sales Marketing</li>
-												<li>Invoice</li>
-												<li>eCommerce</li>
+												<li>AWS</li>
+												<li>Github</li>
 											</ul>
 										</div>
 									</div>
@@ -216,7 +222,8 @@
 					<h2 class="bold">Blog</h2>
 				</div>
 				<div class="row">
-					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+					<div
+						class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
 						<span>Blog</span>
 						<h2>Read Our Case</h2>
 					</div>
@@ -233,19 +240,23 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="blog.html" class="blog-img">
-										<img class="img-responsive" src="/main/images/img-1.jpg"
-											alt="html5 bootstrap by colorlib.com">
+									<a href="blog.html" class="blog-img"> <img
+										class="img-responsive" src="/main/images/img-1.jpg"
+										alt="html5 bootstrap by colorlib.com">
 										<div class="overlay"></div>
 										<div class="link">
-											<span class="read">Read more</h2>
+											<span class="read">Read more
+												</h2>
 										</div>
 									</a>
 									<div class="desc">
 										<span class="meta">15, Feb 2018</span>
-										<h2><a href="blog.html">A Japanese Constellation</a></h2>
-										<p>When she reached the first hills of the Italic Mountains, she had a last view
-											back on the skyline of her hometown Bookmarksgrove</p>
+										<h2>
+											<a href="#">A Japanese Constellation</a>
+										</h2>
+										<p>When she reached the first hills of the Italic
+											Mountains, she had a last view back on the skyline of her
+											hometown Bookmarksgrove</p>
 									</div>
 								</div>
 							</div>
@@ -253,19 +264,23 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="blog.html" class="blog-img">
-										<img class="img-responsive" src="/main/images/img-2.jpg"
-											alt="html5 bootstrap by colorlib.com">
+									<a href="blog.html" class="blog-img"> <img
+										class="img-responsive" src="/main/images/img-2.jpg"
+										alt="html5 bootstrap by colorlib.com">
 										<div class="overlay"></div>
 										<div class="link">
-											<span class="read">Read more</h2>
+											<span class="read">Read more
+												</h2>
 										</div>
 									</a>
 									<div class="desc">
 										<span class="meta">15, Feb 2018</span>
-										<h2><a href="blog.html">A Japanese Constellation</a></h2>
-										<p>When she reached the first hills of the Italic Mountains, she had a last view
-											back on the skyline of her hometown Bookmarksgrove</p>
+										<h2>
+											<a href="blog.html">A Japanese Constellation</a>
+										</h2>
+										<p>When she reached the first hills of the Italic
+											Mountains, she had a last view back on the skyline of her
+											hometown Bookmarksgrove</p>
 									</div>
 								</div>
 							</div>
@@ -273,19 +288,23 @@
 						<div class="item">
 							<div class="col-md-12">
 								<div class="article">
-									<a href="blog.html" class="blog-img">
-										<img class="img-responsive" src="/main/images/img-3.jpg"
-											alt="html5 bootstrap by colorlib.com">
+									<a href="blog.html" class="blog-img"> <img
+										class="img-responsive" src="/main/images/img-3.jpg"
+										alt="html5 bootstrap by colorlib.com">
 										<div class="overlay"></div>
 										<div class="link">
-											<span class="read">Read more</h2>
+											<span class="read">Read more
+												</h2>
 										</div>
 									</a>
 									<div class="desc">
 										<span class="meta">15, Feb 2018</span>
-										<h2><a href="blog.html">A Japanese Constellation</a></h2>
-										<p>When she reached the first hills of the Italic Mountains, she had a last view
-											back on the skyline of her hometown Bookmarksgrove</p>
+										<h2>
+											<a href="blog.html">A Japanese Constellation</a>
+										</h2>
+										<p>When she reached the first hills of the Italic
+											Mountains, she had a last view back on the skyline of her
+											hometown Bookmarksgrove</p>
 									</div>
 								</div>
 							</div>
@@ -301,7 +320,8 @@
 					<h2 class="bold">Testimonies</h2>
 				</div>
 				<div class="row">
-					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+					<div
+						class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
 						<span>Testimonies</span>
 						<h2>Clients Says</h2>
 					</div>
@@ -317,38 +337,44 @@
 					<div class="owl-carousel">
 						<div class="item">
 							<div class="col-md-12 text-center">
-								<div class="testimony">
-									<blockquote>
-										<p>"A small river named Duden flows by their place and supplies it with the
-											necessary regelialia.</p>
-										<span>" &mdash; George Brooks</span>
-									</blockquote>
+								<div class="desc" style="font-size: 20px;">
+									<p>
+										이 프로젝트는 서버의 경우 Springboot의 내장톰캣을 이용하여 WAS를 구동중이며,<br>
+										database는 Mysql을 이용하여 연동되어있습니다.<br> front화면의 경우 jsp +
+										bootStrap을 이용하여 구현하였습니다.
+									</p>
+									<span>기본적인 구조</span>
 								</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="col-md-12 text-center">
-								<div class="testimony">
-									<blockquote>
-										<p>"Even the all-powerful Pointing has no control about the blind texts it is an
-											almost unorthographic life One day however a small line of blind text by the
-											name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-										<span>" &mdash; Daniel Foster</span>
-									</blockquote>
+								<div class="desc" style="font-size: 20px;">
+									<p>
+										Spring security로 기본적인 인증과정과 로그인 유지 중복로그인 방지가 구현되어있으며,<br>
+										Oauth2.0으로 구글로그인과 페이스북로그인이 구현되어있습니다.<br> 또한 로그인 과정에서 jwt를
+										이용하여 보안성을 강화시켰습니다.
+									</p>
+									<span>보안</span>
 								</div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="col-md-12 text-center">
-								<div class="testimony">
-									<blockquote>
-										<p>"When she reached the first hills of the Italic Mountains, she had a last
-											view back on the skyline of her hometown Bookmarksgrove</p>
-										<span>" &mdash; Liam Jenkins</span>
-									</blockquote>
+								<div class="desc" style="font-size: 20px;">
+									<ul>
+										<li>https</li>
+										<li>xss 공격 방지</li>
+										<li>sql injection 공격 방지</li>
+										<li>fake image 경로</li>
+										<li>CAPTCHA(자동입력방지) 구현</li>
+										<li>aws 배포</li>
+									</ul>
+									<span>구현해야될 기능</span>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -362,17 +388,17 @@
 							&copy;
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-							template is made with by <a
+							<script>
+								document.write(new Date().getFullYear());
+							</script>
+							All rights reserved | This template is made with by <a
 								href="https://colorlib.com" target="_blank">Colorlib</a>
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 					</div>
 				</div>
 			</div>
-	</div>
-	</footer>
-
+		</footer>
 	</div>
 
 	<!-- jQuery -->
@@ -391,7 +417,6 @@
 
 	<!-- Main JS (Do not remove) -->
 	<script src="/main/js/main.js"></script>
-
 </body>
 
 </html>
