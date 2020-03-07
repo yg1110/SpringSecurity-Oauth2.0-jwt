@@ -2,6 +2,7 @@ package com.security_blog.yg1110.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +16,8 @@ import com.security_blog.yg1110.servicer.IUserService;
 @Controller
 public class UserController {
 
-	@Autowired IUserService userservice;
+	@Autowired
+	private IUserService userservice;
 
     // 회원가입 처리
     @PostMapping("/signup")
@@ -29,7 +31,26 @@ public class UserController {
 		user.setAccountNonLocked(true);
 		user.setCredentialsNonExpired(true);
 		user.setEnabled(true);
+		user.setCertified(certified_key());
     	userservice.createUser(user);
         return "redirect:/user/login";
     }
+
+    private String certified_key() {
+		Random random = new Random();
+		StringBuffer sb = new StringBuffer();
+		int num = 0;
+
+		do {
+			num = random.nextInt(75) + 48;
+			if ((num >= 48 && num <= 57) || (num >= 65 && num <= 90) || (num >= 97 && num <= 122)) {
+				sb.append((char) num);
+			} else {
+				continue;
+			}
+
+		} while (sb.length() < 10);
+		return sb.toString();
+	}
+
 }

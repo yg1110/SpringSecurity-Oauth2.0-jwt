@@ -15,9 +15,9 @@
 
 	<insert id="createUser" parameterType="User">
 		insert into user (username, password, name, isAccountNonExpired,
-		isAccountNonLocked, isCredentialsNonExpired, isEnabled)
+		isAccountNonLocked, isCredentialsNonExpired, isEnabled, certified)
 		values (#{username}, #{password}, #{name}, #{isAccountNonExpired},
-		#{isAccountNonLocked}, #{isCredentialsNonExpired}, #{isEnabled})
+		#{isAccountNonLocked}, #{isCredentialsNonExpired}, #{isEnabled}, #{certified})
 	</insert>
 
 	<insert id="createAuthority"
@@ -40,4 +40,12 @@
 	<select id="email_duplicate_check" parameterType="User" resultType="String">
 		select username from user where username = #{username}
 	</select>
+
+	<select id="email_certified_check" parameterType="User" resultType="User">
+		select username from user where username = #{username} and certified=#{certified}
+	</select>
+	
+	<update id="email_certified_update" parameterType="User">
+		update user set certified = 'Y' where username = #{username}
+	</update>
 </mapper>

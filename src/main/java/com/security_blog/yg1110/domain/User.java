@@ -12,6 +12,7 @@ public class User implements UserDetails {
 	private String username;
     private String password;
     private String name;
+    private String certified;
     private boolean isAccountNonExpired;
     private boolean isAccountNonLocked;
     private boolean isCredentialsNonExpired;
@@ -68,8 +69,16 @@ public class User implements UserDetails {
     public void setPassword(String password) {
          this.password = password;
     }
+    
+    public String getCertified() {
+		return certified;
+	}
 
-    public void setAccountNonExpired(boolean isAccountNonExpired) {
+	public void setCertified(String certified) {
+		this.certified = certified;
+	}
+
+	public void setAccountNonExpired(boolean isAccountNonExpired) {
          this.isAccountNonExpired = isAccountNonExpired;
     }
 
@@ -91,25 +100,13 @@ public class User implements UserDetails {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public User(String username, String password, String name, boolean isAccountNonExpired, boolean isAccountNonLocked,
-			boolean isCredentialsNonExpired, boolean isEnabled) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.name = name;
-		this.isAccountNonExpired = isAccountNonExpired;
-		this.isAccountNonLocked = isAccountNonLocked;
-		this.isCredentialsNonExpired = isCredentialsNonExpired;
-		this.isEnabled = isEnabled;
 	}
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", name=" + name + ", isAccountNonExpired="
-				+ isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialsNonExpired="
-				+ isCredentialsNonExpired + ", isEnabled=" + isEnabled + ", authorities=" + authorities + "]";
+		return "User [username=" + username + ", password=" + password + ", name=" + name + ", certified=" + certified
+				+ ", isAccountNonExpired=" + isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked
+				+ ", isCredentialsNonExpired=" + isCredentialsNonExpired + ", isEnabled=" + isEnabled + ", authorities="
+				+ authorities + "]";
 	}
 }

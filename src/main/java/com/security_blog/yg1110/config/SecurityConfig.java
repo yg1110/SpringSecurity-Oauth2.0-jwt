@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/user/admin/**").access("hasAuthority('ROLE_ADMIN')")
 				.antMatchers("/user/myinfo").access("hasAuthority('ROLE_USER')") // 페이지 권한 설정
-				.antMatchers("/user/signup/**", "/user/denied", "/user/logout/result", "/signup").permitAll().anyRequest()
+				.antMatchers("/user/signup/**", "/user/denied", "/user/logout/result", "/signup", "/user/email/certified").permitAll().anyRequest()
 				.authenticated().and().addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class) // 소셜로그인 설정
 				.addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class) // jwt 필터 설정
 				.formLogin().loginPage("/user/login").loginProcessingUrl("/login")

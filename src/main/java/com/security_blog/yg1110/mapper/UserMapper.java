@@ -16,4 +16,6 @@ public interface UserMapper {
 	public void deleteUser(String username);
 	public void deleteAuthority(String username);
 	public String email_duplicate_check(User user);
+	public User email_certified_check(User user);
+	public void email_certified_update(User user);
 }

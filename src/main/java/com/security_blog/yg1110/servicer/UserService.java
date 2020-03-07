@@ -67,6 +67,15 @@ public class UserService implements IUserService {
 	@Override
 	public String email_duplicate_check(User user) {
 		return userMapper.email_duplicate_check(user);
-		
+	}
+
+	@Override
+	public User email_certified_check(User user) {
+		return userMapper.email_certified_check(user);
+	}
+
+	@Override
+	public void email_certified_update(User user) {
+		userMapper.email_certified_update(user);		
 	}
 }

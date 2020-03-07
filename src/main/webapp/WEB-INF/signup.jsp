@@ -94,10 +94,10 @@
 						<input class="input100" type="text" name="name" id="name">
 						<span class="focus-input100"></span>
 					</div>
-					<!-- <input type="hidden" name="isAccountNonExpired" value="true">
+					<input type="hidden" name="isAccountNonExpired" value="true">
 					<input type="hidden" name="isAccountNonLocked" value="true">
 					<input type="hidden" name="isCredentialsNonExpired" value="true">
-					<input type="hidden" name="isEnabled" value="true"> -->
+					<input type="hidden" name="isEnabled" value="true">
 
 					<div class="container-login100-form-btn m-t-70">
 						<button class="login100-form-btn" id="user_signup_button">가입하기</button>

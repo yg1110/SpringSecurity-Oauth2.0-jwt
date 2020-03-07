@@ -11,7 +11,8 @@ import com.security_blog.yg1110.servicer.IUserService;
 @RestController
 public class UserRestController {
 
-	@Autowired IUserService userservice;
+	@Autowired
+	private IUserService userservice;
 
     // 이메일 중복체크
     @PostMapping("/user/signup/email_duplicate_check")
