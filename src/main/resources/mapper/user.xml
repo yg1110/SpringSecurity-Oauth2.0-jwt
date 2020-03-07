@@ -14,10 +14,10 @@
      </select>
 
 	<insert id="createUser" parameterType="User">
-		insert into user (username, password, name, isaccountnonexpired,
-		isaccountnonlocked, iscredentialsnonexpired, isenabled)
-		values (#{username}, #{password}, #{name}, #{isaccountnonexpired},
-		#{isaccountnonlocked}, #{iscredentialsnonexpired}, #{isenabled})
+		insert into user (username, password, name, isAccountNonExpired,
+		isAccountNonLocked, isCredentialsNonExpired, isEnabled)
+		values (#{username}, #{password}, #{name}, #{isAccountNonExpired},
+		#{isAccountNonLocked}, #{isCredentialsNonExpired}, #{isEnabled})
 	</insert>
 
 	<insert id="createAuthority"

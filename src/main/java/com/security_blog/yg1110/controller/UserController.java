@@ -25,6 +25,10 @@ public class UserController {
 //		authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 		user.setAuthorities(authorities);
+		user.setAccountNonExpired(true);
+		user.setAccountNonLocked(true);
+		user.setCredentialsNonExpired(true);
+		user.setEnabled(true);
     	userservice.createUser(user);
         return "redirect:/user/login";
     }

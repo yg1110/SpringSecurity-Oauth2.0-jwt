@@ -30,6 +30,7 @@ public class UserService implements IUserService {
 			throw new UsernameNotFoundException(username);
 		}
 		user.setAuthorities(getAuthorities(username));
+		System.out.println(user);
 		return user;
 	}
 	
