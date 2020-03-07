@@ -41,7 +41,7 @@
 		
 					<div class="p-t-10 p-b-10">
 						<span class="txt1">
-							아이디
+							이메일
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">

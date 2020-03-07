@@ -2,38 +2,42 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.security_blog.yg1110.mapper.UserMapper">
 	<select id="Userlist" resultType="User">
-		SELECT * FROM user
+		select * from user
 	</select>
 
 	<select id="readUser" parameterType="String" resultType="User">
-		SELECT * FROM user WHERE username = #{username}
+		select * from user where username = #{username}
 	</select>
 
 	<select id="readAuthority" parameterType="String" resultType="String">
-          SELECT authority_name FROM authority WHERE username = #{username}
+          select authority_name from authority where username = #{username}
      </select>
 
 	<insert id="createUser" parameterType="User">
-		INSERT INTO user (username, password, name, isAccountNonExpired,
-		isAccountNonLocked, isCredentialsNonExpired, isEnabled)
-		VALUES (#{username}, #{password}, #{name}, #{isAccountNonExpired},
-		#{isAccountNonLocked}, #{isCredentialsNonExpired}, #{isEnabled})
+		insert into user (username, password, name, isaccountnonexpired,
+		isaccountnonlocked, iscredentialsnonexpired, isenabled)
+		values (#{username}, #{password}, #{name}, #{isaccountnonexpired},
+		#{isaccountnonlocked}, #{iscredentialsnonexpired}, #{isenabled})
 	</insert>
 
 	<insert id="createAuthority"
 		parameterType="org.springframework.security.core.GrantedAuthority">
-		INSERT INTO authority (username, authority_name)
-		VALUES
+		insert into authority (username, authority_name)
+		values
 		<foreach item="item" collection="authorities" separator=",">
 			(#{username}, #{item.authority})
 		</foreach>
 	</insert>
 
 	<delete id="deleteUser" parameterType="String">
-		DELETE FROM user WHERE username = #{username}
+		delete from user where username = #{username}
 	</delete>
 
 	<delete id="deleteAuthority" parameterType="String">
-		DELETE FROM authority WHERE username = #{username}
+		delete from authority where username = #{username}
 	</delete>
+	
+	<select id="email_duplicate_check" parameterType="User" resultType="String">
+		select username from user where username = #{username}
+	</select>
 </mapper>

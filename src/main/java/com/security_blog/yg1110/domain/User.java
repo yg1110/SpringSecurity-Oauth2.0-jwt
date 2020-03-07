@@ -89,14 +89,10 @@ public class User implements UserDetails {
          this.authorities = authorities;
     }
 
-//	@Override
-//	public String toString() {
-//		return "User [username=" + username + ", password=" + password + ", name=" + name + ", isAccountNonExpired="
-//				+ isAccountNonExpired + ", isAccountNonLocked=" + isAccountNonLocked + ", isCredentialsNonExpired="
-//				+ isCredentialsNonExpired + ", isEnabled=" + isEnabled + "]";
-//	}
-    
-    
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public User(String username, String password, String name, boolean isAccountNonExpired, boolean isAccountNonLocked,
 			boolean isCredentialsNonExpired, boolean isEnabled) {

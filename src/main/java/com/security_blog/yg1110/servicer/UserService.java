@@ -62,4 +62,10 @@ public class UserService implements IUserService {
 	public PasswordEncoder passwordEncoder() {
 		return this.passwordEncoder;
 	}
+
+	@Override
+	public String email_duplicate_check(User user) {
+		return userMapper.email_duplicate_check(user);
+		
+	}
 }

@@ -9,8 +9,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import com.security_blog.yg1110.domain.User;
 
 public interface IUserService extends UserDetailsService {
-     Collection<GrantedAuthority> getAuthorities(String username);
-     public void createUser(User user);
-     public void deleteUser(String username);
-     public PasswordEncoder passwordEncoder();
+	public Collection<GrantedAuthority> getAuthorities(String username);
+	public void createUser(User user);
+	public void deleteUser(String username);
+	public PasswordEncoder passwordEncoder();
+	public String email_duplicate_check(User user);
 }

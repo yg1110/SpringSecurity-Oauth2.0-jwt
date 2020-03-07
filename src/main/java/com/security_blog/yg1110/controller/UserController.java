@@ -10,12 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.security_blog.yg1110.domain.User;
-import com.security_blog.yg1110.servicer.UserService;
+import com.security_blog.yg1110.servicer.IUserService;
 
 @Controller
 public class UserController {
 
-	@Autowired UserService userservice;
+	@Autowired IUserService userservice;
 
     // 회원가입 처리
     @PostMapping("/signup")

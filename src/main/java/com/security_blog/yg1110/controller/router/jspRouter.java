@@ -1,4 +1,4 @@
-package com.security_blog.yg1110.controller;
+package com.security_blog.yg1110.controller.router;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
