@@ -16,7 +16,7 @@ public class jspRouter implements WebMvcConfigurer {
 		registry.addViewController("/user/info").setViewName("info");
 		registry.addViewController("/user/admin").setViewName("admin");
 		registry.addViewController("/user/signup").setViewName("signup");
-		registry.addViewController("/blog/postlist").setViewName("postlist");
-		registry.addViewController("/blog/postwrite").setViewName("postwrite");
+//		registry.addViewController("/blog/postlist").setViewName("postlist");
+		registry.addViewController("/post/write").setViewName("postwrite");
 	}
 }

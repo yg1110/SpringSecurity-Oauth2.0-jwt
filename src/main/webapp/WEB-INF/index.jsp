@@ -16,17 +16,6 @@
 <meta name="keywords" content="" />
 <meta name="author" content="" />
 
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:site_name" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
-
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
@@ -91,7 +80,7 @@
 							</sec:authorize>
 
 							<li class="active"><a href="/user/login/result">Home</a></li>
-							<li><a href="/blog/postlist">Blog</a></li>
+							<li><a href="/post/list">Blog</a></li>
 						</ul>
 					</div>
 				</div>
@@ -143,7 +132,7 @@
 												<input type="hidden" name="name" value="${user.name}">												
 											</form>
 											<p>
-												<a href="#" class="btn btn-primary btn-outline"
+												<a class="btn btn-primary btn-outline"
 													id="email_send_buttton">이메일 인증하기</a>
 											</p>
 											
@@ -155,68 +144,6 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div id="colorlib-about">
-						<div class="container">
-							<div class="row text-center">
-								<h2 class="bold">About</h2>
-							</div>
-							<div class="row">
-								<div class="col-md-5 animate-box">
-									<div class="owl-carousel3">
-										<div class="item">
-											<img class="img-responsive about-img"
-												src="/main/images/about.jpg"
-												alt="html5 bootstrap template by colorlib.com">
-										</div>
-										<div class="item">
-											<img class="img-responsive about-img"
-												src="/main/images/about-2.jpg"
-												alt="html5 bootstrap template by colorlib.com">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-md-push-1 animate-box">
-									<div class="about-desc">
-										<div class="owl-carousel3">
-											<div class="item">
-												<h2>
-													<span>Joeng</span><span>Young-gil</span>
-												</h2>
-											</div>
-											<div class="item">
-												<h2>
-													<span>I'm</span><span>A Programmer</span>
-												</h2>
-											</div>
-										</div>
-										<div class="desc">
-											<div class="rotate">
-												<h2 class="heading">About</h2>
-											</div>
-											<p>
-												A small river named Duden <a href="#">flows by their
-													place</a> and supplies it with the necessary regelialia. It is
-												a paradisematic country, in which roasted parts of sentences
-												fly into your mouth. Even the all-powerful Pointing has no
-												control about the blind texts it is an almost unorthographic
-												life.
-											</p>
-											<p class="colorlib-social-icons">
-												<a href="#"><i class="icon-facebook4"></i></a> <a href="#"><i
-													class="icon-twitter3"></i></a> <a href="#"><i
-													class="icon-googleplus"></i></a> <a href="#"><i
-													class="icon-dribbble2"></i></a>
-											</p>
-											<p>
-												<a href="#" class="btn btn-primary btn-outline">Contact
-													Me!</a>
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 					<div id="colorlib-services">
 						<div class="container">
 							<div class="row text-center">
@@ -384,72 +311,6 @@
 							</div>
 						</div>
 					</div>
-
-					<div id="colorlib-testimony">
-						<div class="container">
-							<div class="row text-center">
-								<h2 class="bold">Testimonies</h2>
-							</div>
-							<div class="row">
-								<div
-									class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-									<span>Testimonies</span>
-									<h2>Clients Says</h2>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12">
-									<div class="rotate">
-										<h2 class="heading">Says</h2>
-									</div>
-								</div>
-							</div>
-							<div class="row animate-box">
-								<div class="owl-carousel">
-									<div class="item">
-										<div class="col-md-12 text-center">
-											<div class="desc" style="font-size: 20px;">
-												<p>
-													이 프로젝트는 서버의 경우 Springboot의 내장톰캣을 이용하여 WAS를 구동중이며,<br>
-													database는 Mysql을 이용하여 연동되어있습니다.<br> front화면의 경우 jsp +
-													bootStrap을 이용하여 구현하였습니다.
-												</p>
-												<span>기본적인 구조</span>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="col-md-12 text-center">
-											<div class="desc" style="font-size: 20px;">
-												<p>
-													Spring security로 기본적인 인증과정과 로그인 유지 중복로그인 방지가 구현되어있으며,<br>
-													Oauth2.0으로 구글로그인과 페이스북로그인이 구현되어있습니다.<br> 또한 로그인 과정에서
-													jwt를 이용하여 보안성을 강화시켰습니다.
-												</p>
-												<span>보안</span>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="col-md-12 text-center">
-											<div class="desc" style="font-size: 20px;">
-												<ul>
-													<li>https</li>
-													<li>xss 공격 방지</li>
-													<li>sql injection 공격 방지</li>
-													<li>fake image 경로</li>
-													<li>CAPTCHA(자동입력방지) 구현</li>
-													<li>aws 배포</li>
-												</ul>
-												<span>구현해야될 기능</span>
-											</div>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
 				</c:otherwise>
 			</c:choose>
 		</sec:authorize>
@@ -460,14 +321,12 @@
 					<div class="col-md-12 text-center">
 						<p>
 							&copy;
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							Copyright &copy;
 							<script>
 								document.write(new Date().getFullYear());
 							</script>
 							All rights reserved | This template is made with by <a
 								href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 					</div>
 				</div>
@@ -491,7 +350,6 @@
 
 	<!-- Main JS (Do not remove) -->
 	<script src="/main/js/main.js"></script>
-
 
 	<script type="text/javascript">
 		$('#email_send_buttton').on(

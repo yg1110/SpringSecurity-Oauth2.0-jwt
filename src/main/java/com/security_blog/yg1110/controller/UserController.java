@@ -22,7 +22,6 @@ public class UserController {
     // 회원가입 처리
     @PostMapping("/signup")
     public String execSignup(User user) {
-    	System.out.println(user);
     	List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 //		authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
@@ -33,7 +32,7 @@ public class UserController {
 		user.setEnabled(true);
 		user.setCertified(certified_key());
     	userservice.createUser(user);
-        return "redirect:/user/login";
+        return "login";
     }
 
     private String certified_key() {

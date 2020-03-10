@@ -13,17 +13,6 @@
 <meta name="keywords" content="" />
 <meta name="author" content="" />
 
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:site_name" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
-
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="favicon.ico">
 
@@ -105,18 +94,26 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="제목을 입력하세요">
-						</div>
-						<textarea name="content"></textarea>
-						<script>
-							CKEDITOR.replace("content", {
-								height : 500
-							/* filebrowserUploadUrl : "/imageUpload.do" */
-							});
-						</script>
+						<form method="post" action="/write" id="post_form">
+							<div class="form-group">
+								<input type="text" name="title" id="title" class="form-control"
+									placeholder="제목을 입력하세요">
+							</div>
+							<textarea name="content" id="content"></textarea>
+							<script>
+								CKEDITOR.replace("content", {
+									height : 500
+								});
+							</script>
+							<br>
+							<button type="button" class="btn btn-primary btn-outline"
+								style="float: right" id='syn_btn'>동 기 작 성 완 료</button>
+							<button type="button" class="btn btn-primary btn-outline"
+								style="float: right" id='asyn_btn'>비 동 기 작 성 완 료</button>
+						</form>
 					</div>
 				</div>
+
 			</div>
 		</div>
 
@@ -154,6 +151,25 @@
 
 	<!-- Main JS (Do not remove) -->
 	<script src="/main/js/main.js"></script>
+
+	<script type="text/javascript">
+		$('#asyn_btn').on('click', function() {
+			var data = {"title": $('#title').val(), "content": CKEDITOR.instances.content.getData()}
+			
+			$.ajax({
+				url : "/restwrite",
+				type : "POST",
+				data : data,
+				error : function(e) {
+					console.log(e);
+				}
+			});
+		});
+		$('#syn_btn').on('click', function() {
+			$('#post_form').submit();
+		});
+	</script>
+
 </body>
 
 </html>

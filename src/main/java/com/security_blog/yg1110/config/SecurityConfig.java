@@ -13,7 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.security_blog.yg1110.filter.Oauth2Filter;
+import com.security_blog.yg1110.filter.Oauth2.Oauth2Filter;
 import com.security_blog.yg1110.filter.jwt.JwtAuthenticationFilter;
 import com.security_blog.yg1110.servicer.IUserService;
 

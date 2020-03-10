@@ -20,7 +20,8 @@ import com.security_blog.yg1110.mapper.UserMapper;
 public class UserService implements IUserService {
 
 	@Autowired
-	UserMapper userMapper;
+	private UserMapper userMapper;
+	
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Override

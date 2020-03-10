@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.security_blog.yg1110.mapper.PostMapper">
+	<insert id="postwrite" parameterType="Post">
+		insert into post (title, content) values (#{title}, #{content})
+	</insert>
+	
+	<select id="postlist" resultType="Post">
+		select * from post
+	</select>
+	
+	<select id="post" parameterType="java.lang.Integer" resultType="Post">
+		select * from post where post_id = #{post_id}
+	</select>
+</mapper>

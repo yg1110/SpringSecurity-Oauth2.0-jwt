@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE HTML>
 <html>
@@ -67,7 +68,7 @@
 					<div class="col-md-12">
 						<ul>
 							<li class="active"><a href="/user/login/result">Home</a></li>
-							<li><a href="/blog/postlist">Blog</a></li>
+							<li><a href="/post/list">Blog</a></li>
 						</ul>
 					</div>
 				</div>
@@ -107,9 +108,8 @@
 						</div>
 					</div>
 				</div>
-				<a href="/blog/postwrite" class="btn btn-primary btn-outline" style="float: right">글
-					쓰 기</a> <br>
-				<br>
+				<a href="/post/write" class="btn btn-primary btn-outline"
+					style="float: right">글 쓰 기</a> <br> <br>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="article animate-box">
@@ -307,31 +307,53 @@
 							</div>
 						</div>
 					</div>
+					<c:forEach items="${post}" var="p">
+						<div class="col-md-4">
+							<div class="article animate-box">
+								<a href="/post/single/${p.post_id}" class="blog-img"> <img
+									class="img-responsive" src="/main/images/img-9.jpg"
+									alt="html5 bootstrap by colorlib.com">
+									<div class="overlay"></div>
+									<div class="link">
+										<span class="read">Read more
+											</h2>
+									</div>
+								</a>
+								<div class="desc">
+									<span class="meta">${p.date}</span>
+									<h2>
+										<a href="blog.html">${p.title}</a>
+									</h2>
+									<p>${p.content}</p>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
-
-		<footer>
-			<div id="footer">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<p>
-							&copy;
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
-							<script>
-								document.write(new Date().getFullYear());
-							</script>
-							All rights reserved | This template is made with by <a
-								href="https://colorlib.com" target="_blank">Colorlib</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-					</div>
+	</div>
+	<footer>
+		<div id="footer">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>
+						&copy;
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>
+							document.write(new Date().getFullYear());
+						</script>
+						All rights reserved | This template is made with by <a
+							href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="/main/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

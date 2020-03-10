@@ -1,4 +1,4 @@
-package com.security_blog.yg1110.filter;
+package com.security_blog.yg1110.filter.Oauth2;
 
 import java.util.ArrayList;
 import java.util.List;
