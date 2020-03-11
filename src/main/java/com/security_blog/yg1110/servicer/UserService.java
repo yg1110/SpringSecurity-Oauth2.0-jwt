@@ -31,7 +31,6 @@ public class UserService implements IUserService {
 			throw new UsernameNotFoundException(username);
 		}
 		user.setAuthorities(getAuthorities(username));
-		System.out.println(user);
 		return user;
 	}
 	
@@ -41,7 +40,6 @@ public class UserService implements IUserService {
         for (String authority : string_authorities) {
              authorities.add(new SimpleGrantedAuthority(authority));
         }
-        System.out.println(authorities);
         return authorities;
    }
 

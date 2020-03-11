@@ -26,7 +26,6 @@ public class EmailController {
 
 	@GetMapping(value = "/user/email/send")
 	public void sendmail(User user) throws MessagingException {
-		System.out.println(user);
 		StringBuffer emailcontent = new StringBuffer();
 		emailcontent.append("<!DOCTYPE html>");
 		emailcontent.append("<html>");

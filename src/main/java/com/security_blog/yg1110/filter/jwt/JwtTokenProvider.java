@@ -54,7 +54,7 @@ public class JwtTokenProvider {
         } catch (final Exception e) {
             throw new RuntimeException();
         }
-        logger.info("claims : " + claims);
+//        logger.info("claims : " + claims);
         return claims.getBody();
 	}
 
