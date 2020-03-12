@@ -37,19 +37,19 @@
 		<div id="colorlib-contact">
 			<div class="container">
 				<div class="row text-center">
-					<h2 class="bold">Contact</h2>
+					<h2 class="bold">Post</h2>
 				</div>
 				<div class="row">
 					<div
 						class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-						<span>Contact</span>
-						<h2>Contact Me</h2>
+						<span>Post</span>
+						<h2>Post</h2>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="rotate">
-							<h2 class="heading">Contact</h2>
+							<h2 class="heading">Post</h2>
 						</div>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 							<textarea name="content" id="content"></textarea>
 							<script>
 								CKEDITOR.replace("content", {
-									height : 500
+									height : 250
 								});
 							</script>
 							<br>
