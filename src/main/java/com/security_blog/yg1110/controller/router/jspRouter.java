@@ -8,7 +8,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class jspRouter implements WebMvcConfigurer {
 
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName("index");
 		registry.addViewController("/user/login").setViewName("login");
 		registry.addViewController("/user/login/result").setViewName("index");
 		registry.addViewController("/user/logout/result").setViewName("logout");

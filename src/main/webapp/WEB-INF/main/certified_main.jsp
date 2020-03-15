@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="colorlib-services">
 	<div class="container">
@@ -80,7 +81,7 @@
 			<div
 				class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
 				<span>Blog</span>
-				<h2>Read Our Case</h2>
+				<h2>Read Our Blog</h2>
 			</div>
 		</div>
 		<div class="row">
@@ -92,79 +93,31 @@
 		</div>
 		<div class="row animate-box">
 			<div class="owl-carousel1">
-				<div class="item">
-					<div class="col-md-12">
-						<div class="article">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-1.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
+				<c:forEach items="${post}" var="p">
+					<div class="item">
+						<div class="col-md-12">
+							<div class="article">
+								<a href="/post/single/${p.post_id}" class="blog-img"> <img
+									class="img-responsive" src="${p.thumbnail}"
+									alt="html5 bootstrap by colorlib.com">
+									<div class="overlay"></div>
+									<div class="link">
+										<h2>
+											<span class="read">Read more</span>
+										</h2>
+									</div>
+								</a>
+								<div class="desc">
+									<span class="meta">${p.date}</span>
 									<h2>
-										<span class="read">Read more</span>
+										<a href="#">${p.title}</a>
 									</h2>
+									<p>${p.excerpt}</p>
 								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="#">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="item">
-					<div class="col-md-12">
-						<div class="article">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-2.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="col-md-12">
-						<div class="article">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-3.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

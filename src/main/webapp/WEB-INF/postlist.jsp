@@ -13,8 +13,11 @@
 
 <link rel="shortcut icon" href="favicon.ico">
 
-<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700"
+	rel="stylesheet">
 
 <link rel="stylesheet" href="/main/css/animate.css">
 <link rel="stylesheet" href="/main/css/icomoon.css">
@@ -23,8 +26,6 @@
 <link rel="stylesheet" href="/main/css/owl.theme.default.min.css">
 <link rel="stylesheet" href="/main/css/magnific-popup.css">
 <link rel="stylesheet" href="/main/css/style.css">
-
-<script src="/main/js/modernizr-2.6.2.min.js"></script>
 
 </head>
 
@@ -55,232 +56,33 @@
 				</div>
 				<a href="/post/write" class="btn btn-primary btn-outline"
 					style="float: right">글 쓰 기</a> <br> <br>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-1.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-4.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-7.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="col-md-4">
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-2.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-5.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-8.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="col-md-4">
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-3.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-6.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-
-						<div class="article animate-box">
-							<a href="blog.html" class="blog-img"> <img
-								class="img-responsive" src="/main/images/img-9.jpg"
-								alt="html5 bootstrap by colorlib.com">
-								<div class="overlay"></div>
-								<div class="link">
-									<span class="read">Read more
-										</h2>
-								</div>
-							</a>
-							<div class="desc">
-								<span class="meta">15, Feb 2018</span>
-								<h2>
-									<a href="blog.html">A Japanese Constellation</a>
-								</h2>
-								<p>When she reached the first hills of the Italic Mountains,
-									she had a last view back on the skyline of her hometown
-									Bookmarksgrove</p>
-							</div>
-						</div>
-					</div>
-					<c:forEach items="${post}" var="p">
+				<c:forEach items="${post}" var="p" varStatus="status">
+					<c:if test="${status.count%3==0}"><div class="row"></c:if>					
 						<div class="col-md-4">
 							<div class="article animate-box">
-								<a href="/post/single/${p.post_id}" class="blog-img"> <img
-									class="img-responsive" src="/main/images/img-9.jpg"
-									alt="html5 bootstrap by colorlib.com">
+								${status.count } <a href="/post/single/${p.post_id}"
+									class="blog-img"> <img class="img-responsive"
+									src="${p.thumbnail}" alt="html5 bootstrap by colorlib.com">
 									<div class="overlay"></div>
 									<div class="link">
-										<span class="read">Read more
-											</h2>
+										<span class="read">Read more 
 									</div>
 								</a>
 								<div class="desc">
-									<span class="meta">${p.date}</span>
-									<h2>
-										<a href="blog.html">${p.title}</a>
+									<span class="meta">${p.date}</span> <a href="/post/single/${p.post_id}">${p.title}</a>
 									</h2>
-									<p>${p.content}</p>
+									<p>${p.excerpt}</p>
 								</div>
 							</div>
 						</div>
-					</c:forEach>
-				</div>
+					<c:if test="${status.count%3==0}"></div></c:if>					
+				</c:forEach>
 			</div>
 		</div>
 	</div>
 
 	<%@ include file="etc/footer.jsp"%>
-	
+
 	<script src="/main/js/jquery.min.js"></script>
 	<script src="/main/js/jquery.easing.1.3.js"></script>
 	<script src="/main/js/bootstrap.min.js"></script>

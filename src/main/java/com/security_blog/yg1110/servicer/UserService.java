@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ExtendedModelMap;
+import org.springframework.ui.Model;
 
 import com.security_blog.yg1110.domain.User;
 import com.security_blog.yg1110.mapper.UserMapper;
@@ -21,7 +23,10 @@ public class UserService implements IUserService {
 
 	@Autowired
 	private UserMapper userMapper;
-	
+
+	@Autowired
+	private PostService postservice;
+
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Override
@@ -30,6 +35,9 @@ public class UserService implements IUserService {
 		if(user==null) {
 			throw new UsernameNotFoundException(username);
 		}
+		Model model = new ExtendedModelMap();
+		model.addAttribute("post", postservice.postlist());
+		System.out.println(postservice.postlist());
 		user.setAuthorities(getAuthorities(username));
 		return user;
 	}

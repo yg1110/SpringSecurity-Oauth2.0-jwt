@@ -5,7 +5,22 @@ public class Post {
 	private String title;
 	private String content;
 	private String date;
+	private String thumbnail;
+	private String excerpt;
+
 	
+	public String getExcerpt() {
+		return excerpt;
+	}
+	public void setExcerpt(String excerpt) {
+		this.excerpt = excerpt;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	public int getPost_id() {
 		return post_id;
 	}
@@ -32,6 +47,17 @@ public class Post {
 	}
 	@Override
 	public String toString() {
-		return "Post [post_id=" + post_id + ", title=" + title + ", content=" + content + ", date=" + date + "]";
+		return "Post [post_id=" + post_id + ", title=" + title + ", content=" + content + ", date=" + date
+				+ ", thumbnail=" + thumbnail + ", excerpt=" + excerpt + "]";
 	}
+	public Post(String title, String content, String date, String thumbnail, String excerpt) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.date = date;
+		this.thumbnail = thumbnail;
+		this.excerpt = excerpt;
+	}
+
+	
 }

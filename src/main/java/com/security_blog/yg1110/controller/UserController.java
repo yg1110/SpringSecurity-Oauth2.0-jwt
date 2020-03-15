@@ -8,9 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.security_blog.yg1110.domain.User;
+import com.security_blog.yg1110.servicer.IPostService;
 import com.security_blog.yg1110.servicer.IUserService;
 
 @Controller
@@ -19,7 +22,17 @@ public class UserController {
 	@Autowired
 	private IUserService userservice;
 
-    // 회원가입 처리
+	@Autowired
+	private IPostService postservice;
+
+    @GetMapping("/")
+    public String index(Model model) {
+    	model.addAttribute("post", postservice.postlist());
+        return "index";
+    }
+
+	
+	// 회원가입 처리
     @PostMapping("/signup")
     public String execSignup(User user) {
     	List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
