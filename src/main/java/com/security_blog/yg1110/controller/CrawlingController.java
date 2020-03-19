@@ -23,7 +23,7 @@ public class CrawlingController {
 	@Autowired
 	private IPostService postService;
 
-	@GetMapping(value = "/test")
+	@GetMapping(value = "/crawling")
 	public String crawling(User user) throws MessagingException, IOException {
 
 		Connection.Response response = Jsoup.connect("https://yg1110.tistory.com/")

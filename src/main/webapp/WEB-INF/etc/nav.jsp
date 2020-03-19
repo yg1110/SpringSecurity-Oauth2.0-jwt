@@ -12,7 +12,7 @@
 					<ul>
 						<sec:authorize access="isAuthenticated()">
 							<sec:authentication property="principal" var="user" />
-							<div>${user}님</div>
+							<div>${user.name}님</div>
 						</sec:authorize>
 						<sec:authorize access="isAnonymous()">
 							<li><a href="/user/loginPage">로그인</a></li>

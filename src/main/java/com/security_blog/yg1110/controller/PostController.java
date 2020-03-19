@@ -1,6 +1,12 @@
 package com.security_blog.yg1110.controller;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +33,22 @@ public class PostController {
 	}
 
 	@PostMapping("/write")
-	public String postwrite(Post post) {
+	public String postwrite(Post post, @RequestPart MultipartFile files) {
+		if(files != null) {
+			try {
+				String baseDir = "/Users/jeong-yeong-gil/Desktop/SpringSecurity-Oauth2.0-jwt/src/main/resources/static/img";
+				files.transferTo(new File(baseDir + "/" + files.getOriginalFilename()));
+				InputStream is = new FileInputStream(baseDir + "/" + files.getOriginalFilename());
+				BufferedImage img = ImageIO.read(is);
+				ByteArrayOutputStream bos = new ByteArrayOutputStream();
+				ImageIO.write(img, "png", bos);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println(files.getOriginalFilename());
+		}
+		System.out.println(files);
+		System.out.println(post);
 		postService.postwrite(post);
 		return "redirect:/post/list";
 	}
@@ -36,26 +57,6 @@ public class PostController {
 	public String post(@PathVariable int post_id, Model model) {
 		model.addAttribute("post", postService.post(post_id));
 		return "post";
-	}
-
-	@PostMapping(value = "/upload")
-	public String fileUpload(@RequestPart MultipartFile files, Model model) {
-		try {
-			String baseDir = "/Users/jeong-yeong-gil/Desktop/SpringSecurity-Oauth2.0-jwt/src/main/resources/static/img";
-			files.transferTo(new File(baseDir + "/" + files.getOriginalFilename()));
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println(files.getOriginalFilename());
-		model.addAttribute("image", "/img/"+files.getOriginalFilename());
-		return "file2";
-	}
-
-	@GetMapping(value = "/file")
-	public String file(Model model) {
-		model.addAttribute("image", "/img/응답결과.png");
-		return "file2";
 	}
 
 }

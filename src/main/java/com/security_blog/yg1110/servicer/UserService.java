@@ -37,7 +37,6 @@ public class UserService implements IUserService {
 		}
 		Model model = new ExtendedModelMap();
 		model.addAttribute("post", postservice.postlist());
-		System.out.println(postservice.postlist());
 		user.setAuthorities(getAuthorities(username));
 		return user;
 	}

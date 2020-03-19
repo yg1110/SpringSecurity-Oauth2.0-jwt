@@ -39,6 +39,7 @@
 				<div class="row text-center">
 					<h2 class="bold">Post</h2>
 				</div>
+								
 				<div class="row">
 					<div
 						class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
@@ -55,7 +56,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0">
-						<form method="post" action="/write" id="post_form">
+						<form method="post" action="/write" id="post_form" enctype="multipart/form-data" >
 							<div class="form-group">
 								<input type="text" name="title" id="title" class="form-control"
 									placeholder="제목을 입력하세요">
@@ -67,10 +68,11 @@
 								});
 							</script>
 							<br>
+							
+							<input type="file" name="files">
+							
 							<button type="button" class="btn btn-primary btn-outline"
-								style="float: right" id='syn_btn'>동 기 작 성 완 료</button>
-							<button type="button" class="btn btn-primary btn-outline"
-								style="float: right" id='asyn_btn'>비 동 기 작 성 완 료</button>
+								style="float: right" id='syn_btn'>작 성 완 료</button>
 						</form>
 					</div>
 				</div>
@@ -90,18 +92,6 @@
 	<script src="/main/js/main.js"></script>
 
 	<script type="text/javascript">
-		$('#asyn_btn').on('click', function() {
-			var data = {"title": $('#title').val(), "content": CKEDITOR.instances.content.getData()}
-			
-			$.ajax({
-				url : "/restwrite",
-				type : "POST",
-				data : data,
-				error : function(e) {
-					console.log(e);
-				}
-			});
-		});
 		$('#syn_btn').on('click', function() {
 			$('#post_form').submit();
 		});
