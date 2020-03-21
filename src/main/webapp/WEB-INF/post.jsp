@@ -67,6 +67,8 @@
 								<h3>
 									<a href="blog.html">${post.title}</a>
 								</h3>
+								<p>첨부파일 : <a href="/fileDown/${file.post_id}">${file.fileOriginalName}</a></p>
+
 								<p>${post.content}</p>
 								<p class="tags">
 									<a href="#">Fashion</a> <a href="#">Beauty</a> <a href="#">Health</a>

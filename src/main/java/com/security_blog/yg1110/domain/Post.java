@@ -2,6 +2,7 @@ package com.security_blog.yg1110.domain;
 
 public class Post {
 	private int post_id;
+	private String username;
 	private String title;
 	private String content;
 	private String date;
@@ -45,19 +46,25 @@ public class Post {
 	public void setDate(String date) {
 		this.date = date;
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
 	@Override
 	public String toString() {
-		return "Post [post_id=" + post_id + ", title=" + title + ", content=" + content + ", date=" + date
-				+ ", thumbnail=" + thumbnail + ", excerpt=" + excerpt + "]";
+		return "Post [post_id=" + post_id + ", username=" + username + ", title=" + title + ", content=" + content
+				+ ", date=" + date + ", thumbnail=" + thumbnail + ", excerpt=" + excerpt + "]";
 	}
-	public Post(String title, String content, String date, String thumbnail, String excerpt) {
+	public Post(String username, String title, String content, String date, String thumbnail, String excerpt) {
 		super();
+		this.username = username;
 		this.title = title;
 		this.content = content;
 		this.date = date;
 		this.thumbnail = thumbnail;
 		this.excerpt = excerpt;
 	}
-
 	
 }

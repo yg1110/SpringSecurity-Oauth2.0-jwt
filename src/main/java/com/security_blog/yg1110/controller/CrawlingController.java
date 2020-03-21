@@ -9,7 +9,6 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,9 +57,9 @@ public class CrawlingController {
 
 			String datetime = datesplit[0] + "-" + datesplit[1] + "-" + datesplit[2] + " " + datesplit[3];
 
-			Post post = new Post(titles.get(i), content, datetime, thums.get(i), excerpts.get(i));
+			Post post = new Post("yg1110@yg1110.com", titles.get(i), content, datetime, thums.get(i), excerpts.get(i));
 
-			postService.postwrite(post);
+			postService.Crawling_PostData_Insert(post);
 		}
 		return null;
 	}

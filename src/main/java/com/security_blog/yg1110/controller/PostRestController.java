@@ -31,7 +31,7 @@ public class PostRestController {
 
 	@PostMapping("/restwrite")
 	public ModelAndView postwrite(Post post, Model model) {
-		postService.postwrite(post);
+		postService.PostData_Insert(post);
 		model.addAttribute("post", postService.postlist());
 		return new ModelAndView("postlist");
 	}

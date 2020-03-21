@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.security_blog.yg1110.mapper.PostMapper">
-	<insert id="postwrite" parameterType="Post">
-		insert into post (title, content, thumbnail, excerpt) values
-		(#{title}, #{content}, #{thumbnail}, #{excerpt})
+	<insert id="Crawling_PostData_Insert" parameterType="Post">
+		insert into post (username, title, content, thumbnail, date, excerpt) values
+		(#{username}, #{title}, #{content}, #{thumbnail}, #{date}, #{excerpt})
+	</insert>
+
+	<insert id="PostData_Insert" parameterType="Post" useGeneratedKeys="true" keyProperty="post_id">
+		insert into post (username, title, content, thumbnail, excerpt) values
+		(#{username}, #{title}, #{content}, #{thumbnail}, #{excerpt})
+	</insert>
+	
+	<insert id="PostFile_Insert" parameterType="FileInfo">
+		insert into file (post_id, fileName, fileOriginalName, fileUrl) values
+		(#{post_id}, #{fileName}, #{fileOriginalName}, #{fileUrl})
 	</insert>
 
 	<select id="postlist" resultType="Post">
 		select * from post
 	</select>
 
-	<select id="post" parameterType="java.lang.Integer"
-		resultType="Post">
+	<select id="post" parameterType="java.lang.Integer" resultType="Post">
 		select * from post where post_id = #{post_id}
+	</select>
+	
+	<select id="postfile" parameterType="java.lang.Integer" resultType="FileInfo">
+		select * from file where post_id = #{post_id}
 	</select>
 </mapper>

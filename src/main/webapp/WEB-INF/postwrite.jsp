@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!DOCTYPE HTML>
 <html>
@@ -57,6 +59,7 @@
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0">
 						<form method="post" action="/write" id="post_form" enctype="multipart/form-data" >
+						<input type="hidden" name="username" value=${user.username} >
 							<div class="form-group">
 								<input type="text" name="title" id="title" class="form-control"
 									placeholder="제목을 입력하세요">
