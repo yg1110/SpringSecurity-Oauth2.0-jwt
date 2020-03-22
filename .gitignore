@@ -3,7 +3,7 @@ application.properties
 
 HELP.md
 target/
-**/static/file/**
+src/main/resources/static/file/**
 
 ### STS ###
 .apt_generated
