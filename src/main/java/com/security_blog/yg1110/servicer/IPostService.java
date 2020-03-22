@@ -12,4 +12,5 @@ public interface IPostService {
 	public List<Post> postlist();
 	public Post post(int post_id);
 	public FileInfo postfile(int post_id);
+	public FileInfo postfiledown(String fileName);
 }

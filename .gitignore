@@ -3,8 +3,7 @@ application.properties
 
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/test/**
+**/static/file/**
 
 ### STS ###
 .apt_generated

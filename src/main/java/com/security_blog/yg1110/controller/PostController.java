@@ -36,27 +36,6 @@ public class PostController {
 		return "postlist";
 	}
 
-//	@PostMapping("/write")
-//	public String postwrite(Post post, @RequestPart MultipartFile files) {
-//		if(files != null) {
-//			try {
-//				String baseDir = "/Users/jeong-yeong-gil/Desktop/SpringSecurity-Oauth2.0-jwt/src/main/resources/static/img";
-//				files.transferTo(new File(baseDir + "/" + files.getOriginalFilename()));
-//				InputStream is = new FileInputStream(baseDir + "/" + files.getOriginalFilename());
-//				BufferedImage img = ImageIO.read(is);
-//				ByteArrayOutputStream bos = new ByteArrayOutputStream();
-//				ImageIO.write(img, "png", bos);
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			System.out.println(files.getOriginalFilename());
-//		}
-//		System.out.println(files);
-//		System.out.println(post);
-//		postService.postwrite(post);
-//		return "redirect:/post/list";
-//	}
-
 	@PostMapping("/write")
 	public String postwrite(Post post, HttpServletRequest request, @RequestPart MultipartFile files) throws Exception{
 
@@ -76,7 +55,7 @@ public class PostController {
 	        files.transferTo(destinationFile);
 	        
 			postService.PostData_Insert(post);
-			FileInfo file = new FileInfo(post.getPost_id(), sourceFileName, destinationFileName, fileUrl);
+			FileInfo file = new FileInfo(post.getPost_id(), destinationFileName, sourceFileName, fileUrl);
 			
 			postService.PostFile_Insert(file);
 
@@ -94,17 +73,16 @@ public class PostController {
 		return "post";
 	}
 	
-	@GetMapping("/fileDown/{post_id}")
-    private void fileDown(@PathVariable int post_id, HttpServletRequest request, HttpServletResponse response) throws Exception{
+	@GetMapping("/fileDown/{fileName}")
+    private void fileDown(@PathVariable String fileName, HttpServletRequest request, HttpServletResponse response) throws Exception{
         
         request.setCharacterEncoding("UTF-8");
-        FileInfo filedata = postService.postfile(post_id);
+        FileInfo filedata = postService.postfiledown(fileName);
         System.out.println(filedata);
         //파일 업로드된 경로 
         try{
             String fileUrl = filedata.getFileUrl();
             String savePath = fileUrl;
-            String fileName = filedata.getFileName();
             
             //실제 내보낼 파일명 
             String oriFileName = filedata.getFileOriginalName();
@@ -116,7 +94,7 @@ public class PostController {
             
             //파일을 읽어 스트림에 담기  
             try{
-                file = new File(savePath, oriFileName);
+                file = new File(savePath, fileName);
                 in = new FileInputStream(file);
             } catch (FileNotFoundException fe) {
                 skip = true;

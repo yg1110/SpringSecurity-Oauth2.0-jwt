@@ -27,4 +27,9 @@
 	<select id="postfile" parameterType="java.lang.Integer" resultType="FileInfo">
 		select * from file where post_id = #{post_id}
 	</select>
+	
+	<select id="postfiledown" parameterType="java.lang.String" resultType="FileInfo">
+		select * from file where fileName = #{fileName}
+	</select>
+	
 </mapper>

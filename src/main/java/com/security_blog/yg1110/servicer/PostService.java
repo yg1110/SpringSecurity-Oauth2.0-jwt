@@ -45,4 +45,9 @@ public class PostService implements IPostService {
 	public FileInfo postfile(int post_id) {
 		return postMapper.postfile(post_id);
 	}
+	
+	@Override
+	public FileInfo postfiledown(String fileName) {
+		return postMapper.postfiledown(fileName);
+	}
 }
