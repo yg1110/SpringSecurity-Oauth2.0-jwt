@@ -40,7 +40,7 @@ public class PostController {
 	public String postwrite(Post post, HttpServletRequest request, @RequestPart MultipartFile files) throws Exception{
 
 		if (files != null) {
-			String fileUrl = "/Users/jeong-yeong-gil/Desktop/SpringSecurity-Oauth2.0-jwt/src/main/resources/static/img/";
+			String fileUrl = "/Users/jeong-yeong-gil/Desktop/SpringSecurity-Oauth2.0-jwt/src/main/resources/static/file/";
 
 			String sourceFileName = files.getOriginalFilename();
 			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();

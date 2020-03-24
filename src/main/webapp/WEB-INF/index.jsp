@@ -38,7 +38,9 @@
 		<%@ include file="etc/header.jsp"%>
 		<sec:authorize access="isAuthenticated()">
 			<sec:authentication property="principal" var="user" />
-			<c:choose>
+			<%@ include file="main/certified_main.jsp"%>
+			
+			<%-- <c:choose>
 				<c:when test="${user.certified != 'Y'}">
 					<%@ include file="main/uncertified_main.jsp"%>
 				</c:when>
@@ -46,7 +48,7 @@
 				<c:otherwise>
 					<%@ include file="main/certified_main.jsp"%>
 				</c:otherwise>
-			</c:choose>
+			</c:choose> --%>
 		</sec:authorize>
 		<%@ include file="etc/footer.jsp"%>
 	</div>

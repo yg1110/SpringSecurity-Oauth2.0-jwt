@@ -85,6 +85,7 @@ public class Oauth2Filter {
 		Filter.setRestTemplate(Template);
 		Filter.setTokenServices(
 				new UserInfoTokenServices(resource.getUserInfoUri(), client.getClientId()));
+		
 		Filter.setAuthenticationSuccessHandler(new OAuth2SuccessHandler());
 		
 		return Filter;
